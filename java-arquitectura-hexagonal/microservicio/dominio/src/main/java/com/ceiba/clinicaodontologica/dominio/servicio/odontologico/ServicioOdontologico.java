@@ -1,4 +1,4 @@
-//package com.ceiba.clinicaodontologica.dominio.servicio.odontologico;
+package com.ceiba.clinicaodontologica.dominio.servicio.odontologico;
 //
 //import com.ceiba.clinicaodontologica.dominio.repositorio.RepositorioCita;
 ////import com.ceiba.clinicaodontologica.dominio.repositorio.RepositorioPrestamo;

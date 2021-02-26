@@ -1,7 +1,6 @@
 package com.ceiba.clinicaodontologica.testdatabuilder;
 
 
-import com.ceiba.clinicaodontologica.dominio.Cita;
 import com.ceiba.clinicaodontologica.dominio.Paciente;
 
 public class PacienteTestDataBuilder {

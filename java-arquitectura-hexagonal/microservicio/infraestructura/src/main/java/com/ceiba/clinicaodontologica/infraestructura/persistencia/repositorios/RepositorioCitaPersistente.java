@@ -7,6 +7,8 @@ import com.ceiba.clinicaodontologica.dominio.excepcion.PacienteException;
 import com.ceiba.clinicaodontologica.dominio.persistencia.entidad.CitaEntity;
 import com.ceiba.clinicaodontologica.dominio.persistencia.repositorio.jpa.RepositorioCitaJPA;
 import com.ceiba.clinicaodontologica.dominio.repositorio.RepositorioCita;
+import com.ceiba.clinicaodontologica.dominio.repositorio.RepositorioPaciente;
+import com.ceiba.clinicaodontologica.infraestructura.configuracion.conexion.ConexionJPA;
 import com.ceiba.clinicaodontologica.infraestructura.persistencia.builder.CitaBuilder;
 import com.ceiba.clinicaodontologica.dominio.persistencia.repositorio.jpa.RepositorioCitaJPA;
 
@@ -32,15 +34,14 @@ public class RepositorioCitaPersistente implements RepositorioCita, RepositorioC
     private static final String CITA_FIND_BY_CODIGO_DOC = "Cita.findByCodigoDoc";
     private static final String NO_CITAS_POR_FECHA = "No se puede asignar una cita a una misma fecha y hora ya registrada.";
 
-    private final EntityManager entityManager;
-    private RepositorioPacientePersistente repositorioPacientePersistente;
+    private final EntityManager entityManager = new ConexionJPA().createEntityManager();
+    private RepositorioPaciente repositorioPacientePersistente;
 
-    public RepositorioCitaPersistente(EntityManager entityManager) {
-
+    /*public RepositorioCitaPersistente(EntityManager entityManager, RepositorioPaciente repositorioPacientePersistente) {
+    	
         this.entityManager = entityManager;
-        
-        
-    }
+        this.repositorioPacientePersistente = repositorioPacientePersistente;
+    }*/
 
     @Override
     public Cita obtenerPorId(int id) {
@@ -74,7 +75,6 @@ public class RepositorioCitaPersistente implements RepositorioCita, RepositorioC
     public void actualizar(Cita cita) {
 
         entityManager.merge(CitaBuilder.convertirAEntity(cita));
-        
     }
 
     @Override

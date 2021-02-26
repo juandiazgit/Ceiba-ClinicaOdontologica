@@ -6,10 +6,13 @@ import static org.junit.Assert.assertEquals;
 import java.util.Date;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.ceiba.clinicaodontologica.dominio.Cita;
 import com.ceiba.clinicaodontologica.testdatabuilder.CitaTestDataBuilder;
 
+@RunWith(SpringJUnit4ClassRunner.class)
 public class CitaTest {
 
     private static final String PROCEDIMIENTO = "Ortodoncia";
@@ -19,12 +22,12 @@ public class CitaTest {
     public void crearCitaTest() {
 
         // arrange
-        CitaTestDataBuilder CitaTestDataBuilder = new CitaTestDataBuilder().
+        CitaTestDataBuilder citaTestDataBuilder = new CitaTestDataBuilder().
                 conProcedimiento(PROCEDIMIENTO).
                 conFechaCita(FECHACITA);
 
         // act
-        Cita cita = CitaTestDataBuilder.build();
+        Cita cita = citaTestDataBuilder.build();
 
         // assert
         assertEquals(PROCEDIMIENTO, cita.getProcedimiento());

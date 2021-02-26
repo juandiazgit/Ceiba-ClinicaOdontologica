@@ -1,12 +1,9 @@
 
 package com.ceiba.clinicaodontologica.testdatabuilder;
 
-import com.ceiba.clinicaodontologica.dominio.Cita;
-import com.ceiba.clinicaodontologica.dominio.persistencia.entidad.DoctorEntity;
-import com.ceiba.clinicaodontologica.dominio.persistencia.entidad.FacturaEntity;
-import com.ceiba.clinicaodontologica.dominio.persistencia.entidad.PacienteEntity;
-
 import java.util.Date;
+
+import com.ceiba.clinicaodontologica.dominio.Cita;
 
 public class CitaTestDataBuilder {
 	
